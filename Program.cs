@@ -14,7 +14,7 @@ public class Calculator
     {
         switch (operation)
         {
-            case enOperation.Add: return a;
+            case enOperation.Add: return a+b;
             case enOperation.Subtract: return a - b;
             case enOperation.Multiply: return a * b;
             case enOperation.Divide: return b == 0 ? double.NaN : a / b;
@@ -27,7 +27,9 @@ public static class Program
 {
     public static void Main()
     {
-        
+        char choice;
+        do
+        {
             Console.WriteLine("Enter first number:");
             float num1 = float.Parse(Console.ReadLine());
             Console.WriteLine("Enter second number:");
@@ -45,6 +47,8 @@ public static class Program
             {
                 Console.WriteLine($"Result: {result}");
             }
-              
+            Console.WriteLine("Do you want to perform another calculation? (y/n)");
+            choice = char.Parse(Console.ReadLine());
+        } while (choice == 'y' || choice == 'Y');       
     }
 }
